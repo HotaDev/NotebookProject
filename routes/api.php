@@ -25,8 +25,12 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/hello', function () {
-    return 'Hello world';
-});
+Route::get('v1/notebook', 'App\Http\Controllers\NotebookController@notebook');
 
-//Route::get('/v1/notebook', GetAllNotebookController::class);
+Route::post('v1/notebook', 'App\Http\Controllers\NotebookController@notebookAdd'); 
+
+Route::get('v1/notebook/{id}', 'App\Http\Controllers\NotebookController@notebookSearch');
+
+Route::post('v1/notebook/{id}', 'App\Http\Controllers\NotebookController@notebookEdit');
+
+Route::delete('v1/notebook/{id}', 'App\Http\Controllers\NotebookController@notebookDelete');

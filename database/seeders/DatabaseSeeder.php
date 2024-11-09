@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\NotebookTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(NotebookTableSeeder::class);
+
+        $this->command->info('Success!');
+
         // \App\Models\User::factory(10)->create();
     }
 }

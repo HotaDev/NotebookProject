@@ -1,9 +1,10 @@
-version: '1'
+version: '3'
  
 services:
     
     php:
-        image: phptest2
+        build:
+            context: .
         volumes:
             - .:/var/www/html
 
